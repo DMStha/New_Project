@@ -1,14 +1,25 @@
 import { useState } from "react";
 import Footer from "./components/Footer";
-
-import "./App.css";
+import MyNavbar from "./components/Navbar";
 import Testimonials from "./components/Testimonials";
+import Banner from "./components/Banner";
+
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.min";
+import "./App.css";
 
 const App = () => {
   return (
     <>
-      <Testimonials />
-      <br />
+      <MyNavbar />
+      <Banner />
+
+      <div className="bg-dark">
+        <div className="container py-5">
+          <Testimonials />
+        </div>
+      </div>
+
       <Footer />
     </>
   );
