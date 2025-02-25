@@ -4,7 +4,7 @@ import Footer from "./components/Footer";
 import "./App.css";
 import Testimonials from "./components/Testimonials";
 
-function App() {
+const App = () => {
   return (
     <>
       <Testimonials />
@@ -12,6 +12,6 @@ function App() {
       <Footer />
     </>
   );
-}
+};
 
 export default App;
