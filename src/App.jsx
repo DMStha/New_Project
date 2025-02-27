@@ -9,9 +9,11 @@ import "bootstrap/dist/js/bootstrap.bundle.min";
 import "./App.css";
 
 const App = () => {
+  const [title, setTitle] = useState("MindRisers");
   return (
     <>
-      <MyNavbar />
+      <MyNavbar title={title} />
+
       <Banner />
 
       <div className="bg-dark">
