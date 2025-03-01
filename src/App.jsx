@@ -10,13 +10,27 @@ import "./App.css";
 
 const App = () => {
   const [title, setTitle] = useState("MindRisers");
+  const [mode, setMode] = useState("dark"); // Store mode as a string
+
+  const toggleMode = () => {
+    if (mode === "dark") {
+      setMode("secondary");
+    } else {
+      setMode("dark");
+    }
+  };
+
   return (
     <>
-      <MyNavbar title={title} />
+      <MyNavbar title={title} mode={mode} toggleMode={toggleMode} />
 
       <Banner />
 
-      <div className="bg-dark">
+      <div
+        className={
+          mode === "dark" ? "bg-dark text-white" : "bg-light text-dark"
+        }
+      >
         <div className="container py-5">
           <Testimonials />
         </div>
