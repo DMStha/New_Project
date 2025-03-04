@@ -7,6 +7,9 @@ import Banner from "./components/Banner";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import "./App.css";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Home from "./components/Home";
+import About from "./components/About";
 
 const App = () => {
   const [title, setTitle] = useState("MindRisers");
@@ -37,6 +40,13 @@ const App = () => {
       </div>
 
       <Footer />
+
+      <BrowserRouter>
+        <Routes>
+          <Route path="./components/Home.jsx" element={<Home />} />
+          <Route path="./components/About.jsx" element={<About />} />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 };
