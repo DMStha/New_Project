@@ -1,19 +1,19 @@
 import { useState } from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Footer from "./components/Footer";
 import MyNavbar from "./components/Navbar";
 import Testimonials from "./components/Testimonials";
 import Banner from "./components/Banner";
+import Home from "./components/Home";
+import About from "./components/About";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import "./App.css";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Home from "./components/Home";
-import About from "./components/About";
 
 const App = () => {
   const [title, setTitle] = useState("MindRisers");
-  const [mode, setMode] = useState("dark"); // Store mode as a string
+  const [mode, setMode] = useState("dark");
 
   const toggleMode = () => {
     if (mode === "dark") {
@@ -24,7 +24,7 @@ const App = () => {
   };
 
   return (
-    <>
+    <BrowserRouter>
       <MyNavbar title={title} mode={mode} toggleMode={toggleMode} />
 
       <Banner />
@@ -41,13 +41,11 @@ const App = () => {
 
       <Footer />
 
-      <BrowserRouter>
-        <Routes>
-          <Route path="./components/Home.jsx" element={<Home />} />
-          <Route path="./components/About.jsx" element={<About />} />
-        </Routes>
-      </BrowserRouter>
-    </>
+      <Routes>
+        <Route path="/home" element={<Home />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
+    </BrowserRouter>
   );
 };
 
