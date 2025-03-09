@@ -1,14 +1,16 @@
 import React from "react";
 import { Navbar, Nav } from "react-bootstrap";
 import logo1 from "../assets/LOGO.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const MyNavbar = (props) => {
+  const navigate = useNavigate(); // Initialize navigation
+
   let iconClass = "bi";
   if (props.mode === "dark") {
-    iconClass += " bi-sun"; // Light mode icon ☀️
+    iconClass += " bi-sun"; // Light mode icon
   } else {
-    iconClass += " bi-moon"; // Dark mode icon 🌙
+    iconClass += " bi-moon"; // Dark mode icon
   }
 
   return (
@@ -24,7 +26,9 @@ const MyNavbar = (props) => {
             <img src={logo1} className="logo" alt="Brand Logo" />
           </a>
           <Navbar.Brand href="#">
-            <span className="px-1">{props.title}</span>
+            <Link to="/" className="nav-link">
+              <span className="px-1">{props.title}</span>
+            </Link>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
@@ -38,13 +42,17 @@ const MyNavbar = (props) => {
               <Link to="/contact" className="nav-link">
                 Contact
               </Link>
+
+              {/* Navigate to the Signup page when clicked */}
               <button
                 className={`btn ${
                   props.mode === "dark" ? "btn-light" : "btn-dark"
                 } ms-2`}
+                onClick={() => navigate("/signup")}
               >
                 <i className="bi bi-person-plus"></i> Signup
               </button>
+
               <button
                 className={`btn ${
                   props.mode === "dark" ? "btn-light" : "btn-dark"

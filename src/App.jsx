@@ -6,6 +6,9 @@ import Testimonials from "./components/Testimonials";
 import Banner from "./components/Banner";
 import Home from "./components/Home";
 import About from "./components/About";
+import Login from "./components/Login";
+import Signup from "./components/Signup";
+import Contact from "./components/Contact";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
@@ -16,35 +19,33 @@ const App = () => {
   const [mode, setMode] = useState("dark");
 
   const toggleMode = () => {
-    if (mode === "dark") {
-      setMode("secondary");
-    } else {
-      setMode("dark");
-    }
+    setMode(mode === "dark" ? "secondary" : "dark");
   };
 
   return (
     <BrowserRouter>
       <MyNavbar title={title} mode={mode} toggleMode={toggleMode} />
 
-      <Banner />
-
-      <div
-        className={
-          mode === "dark" ? "bg-dark text-white" : "bg-light text-dark"
-        }
-      >
-        <div className="container py-5">
-          <Testimonials />
-        </div>
-      </div>
-
-      <Footer />
-
       <Routes>
+        <Route
+          path="/"
+          element={
+            <>
+              <Banner />
+              <div className="container-fluid py-5 bg-dark ">
+                <Testimonials />
+              </div>
+            </>
+          }
+        />
         <Route path="/home" element={<Home />} />
         <Route path="/about" element={<About />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
+
+      <Footer />
     </BrowserRouter>
   );
 };

@@ -9,13 +9,16 @@ const Testimonials = () => {
   var settings = {
     dots: true,
     infinite: true,
-    speed: 200,
-    slidesToShow: 2, // Adjusted for better display on smaller screens
+    speed: 500,
+    autoplay: true, //  Enables autoplay
+    autoplaySpeed: 2000, //  Slides change every 2 seconds
+    slidesToShow: 3, // Adjusted for better display
     slidesToScroll: 1,
+    pauseOnHover: true, //  Pauses when hovered
     responsive: [
       {
         breakpoint: 1024,
-        settings: { slidesToShow: 3 },
+        settings: { slidesToShow: 2 },
       },
       {
         breakpoint: 600,
@@ -25,50 +28,15 @@ const Testimonials = () => {
   };
 
   return (
-    <Slider {...settings}>
-      <div>
-        <img
-          src={truck1}
-          alt="Truck Kun"
-          style={{ width: "500px", height: "500px" }}
-        />
-      </div>
-      <div>
-        <img
-          src={truck2}
-          alt="Truck Kun"
-          style={{ width: "500px", height: "500px" }}
-        />
-      </div>
-      <div>
-        <img
-          src={truck1}
-          alt="Truck Kun"
-          style={{ width: "500px", height: "500px" }}
-        />
-      </div>
-      <div>
-        <img
-          src={truck2}
-          alt="Truck Kun"
-          style={{ width: "500px", height: "500px" }}
-        />
-      </div>
-      <div>
-        <img
-          src={truck1}
-          alt="Truck Kun"
-          style={{ width: "500px", height: "500px" }}
-        />
-      </div>
-      <div>
-        <img
-          src={truck2}
-          alt="Truck Kun"
-          style={{ width: "500px", height: "500px" }}
-        />
-      </div>
-    </Slider>
+    <div className="testimonial-container">
+      <Slider {...settings}>
+        {[truck1, truck2, truck1, truck2, truck1].map((image, index) => (
+          <div key={index} className="testimonial-slide">
+            <img src={image} alt={`Truck Kun ${index}`} />
+          </div>
+        ))}
+      </Slider>
+    </div>
   );
 };
 

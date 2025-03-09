@@ -39,3 +39,49 @@ footer h5 {
   list-style-type: none;
   padding: 0;
 }
+
+.testimonial-container {
+  width: 85%;
+  margin: auto;
+  padding: 20px;
+  background-color: #222;
+  border-radius: 10px;
+}
+
+/* testimonials */
+.testimonial-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.testimonial-slide img {
+  width: 80%; /* Reduce image size */
+  max-width: 250px; /* Limit max width */
+  height: auto;
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.testimonial-slide img:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 8px 16px rgba(255, 193, 7, 0.3);
+}
+
+/* card css */
+.custom-card {
+  background: #343a40; /* Dark Grey */
+  color: white;
+  border: none;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.custom-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 10px 20px rgba(255, 193, 7, 0.3); /* Glow effect */
+}
+
+.custom-card .card-body {
+  padding: 20px;
+}
