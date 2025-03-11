@@ -79,3 +79,9 @@ footer h5 {
 .custom-card .card-body {
   padding: 20px;
 }
+
+/* login signup */
+
+.card {
+  width: 550px;
+}

@@ -2,8 +2,8 @@ import React from "react";
 
 const Login = () => {
   return (
-    <div className="d-flex justify-content-center align-items-center vh-100 bg-dark">
-      <div className="card p-4 shadow-lg" style={{ width: "350px" }}>
+    <div className="d-flex justify-content-center align-items-center vh-100 bg-dark pt-4">
+      <div className="card p-4 bg-black shadow-lg text-white">
         <h2 className="text-center mb-4">Login</h2>
         <form>
           <div className="mb-3">
