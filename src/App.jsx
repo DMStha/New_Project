@@ -14,7 +14,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import "./App.css";
 
-const App = () => {
+const App = (props) => {
   const [title, setTitle] = useState("MindRisers");
   const [mode, setMode] = useState("dark");
 
@@ -31,8 +31,8 @@ const App = () => {
           path="/"
           element={
             <>
-              <Banner />
-              <div className="container-fluid py-5 bg-dark ">
+              <Banner mode={mode} />
+              <div className={`container-fluid py-5 bg-${mode}`}>
                 <Testimonials />
               </div>
             </>

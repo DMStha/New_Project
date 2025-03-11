@@ -1,8 +1,10 @@
 import React from "react";
 
-const Banner = () => {
+const Banner = (props) => {
   return (
-    <section className="container-fluid Banner bg-dark d-flex flex-column align-items-center justify-content-center min-vh-100">
+    <section
+      className={`container-fluid Banner bg-${props.mode} d-flex flex-column align-items-center justify-content-center min-vh-100`}
+    >
       <div className="container text-center">
         <h1 className="text-white">Welcome to React Project Mindrisers</h1>
         <p className="text-white lead">

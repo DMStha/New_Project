@@ -2,12 +2,6 @@
   background-color: rgba(0, 0, 0, 0.7);
 }
 
-.Banner {
-  background-image: url(./assets/bannar.jpg);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
 .logo {
   height: 50px;
   width: auto;
