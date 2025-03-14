@@ -43,6 +43,8 @@ const MyNavbar = (props) => {
                 Contact
               </Link>
 
+              <Link to="">Users</Link>
+
               {/* Navigate to the Signup page when clicked */}
               <button
                 className={`btn ${
