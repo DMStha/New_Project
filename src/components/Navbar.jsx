@@ -36,14 +36,17 @@ const MyNavbar = (props) => {
               <Link to="/" className="nav-link">
                 Home
               </Link>
-              <Link to="/about" className="nav-link">
+              <Link to="about" className="nav-link">
                 About
               </Link>
-              <Link to="/contact" className="nav-link">
+              <Link to="contact" className="nav-link">
                 Contact
               </Link>
-
-              <Link to="">Users</Link>
+              <li className="nav-item">
+                <Link className="nav-link" to="">
+                  Users
+                </Link>
+              </li>
 
               {/* Navigate to the Signup page when clicked */}
               <button
