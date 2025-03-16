@@ -13,6 +13,7 @@ import Contact from "./components/Contact";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import "./App.css";
+import Users from "./components/Users";
 
 const App = (props) => {
   const [title, setTitle] = useState("MindRisers");
@@ -43,6 +44,7 @@ const App = (props) => {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/users" element={<Users />} />
       </Routes>
 
       <Footer />

@@ -51,7 +51,7 @@ const MyNavbar = (props) => {
               {/* Navigate to the Signup page when clicked */}
               <button
                 className={`btn ${
-                  props.mode === "dark" ? "btn-light" : "btn-dark"
+                  props.mode === "dark" ? "btn-dark" : "btn-secondary"
                 } ms-2`}
                 onClick={() => navigate("/signup")}
               >
