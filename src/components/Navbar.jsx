@@ -1,17 +1,13 @@
 import React from "react";
 import { Navbar, Nav } from "react-bootstrap";
+import { NavLink, useNavigate } from "react-router-dom";
 import logo1 from "../assets/LOGO.png";
-import { Link, useNavigate } from "react-router-dom";
 
 const MyNavbar = (props) => {
-  const navigate = useNavigate(); // Initialize navigation
+  const navigate = useNavigate();
 
   let iconClass = "bi";
-  if (props.mode === "dark") {
-    iconClass += " bi-sun"; // Light mode icon
-  } else {
-    iconClass += " bi-moon"; // Dark mode icon
-  }
+  iconClass += props.mode === "dark" ? " bi-sun" : " bi-moon";
 
   return (
     <div className="Navbar-img">
@@ -22,45 +18,65 @@ const MyNavbar = (props) => {
         className="navbar-expand-lg"
       >
         <div className="container">
-          <a href="#">
-            <img src={logo1} className="logo" alt="Brand Logo" />
-          </a>
-          <Navbar.Brand href="#">
-            <Link to="/" className="nav-link">
-              <span className="px-1">{props.title}</span>
-            </Link>
+          <Navbar.Brand
+            as={NavLink}
+            to="/"
+            className="d-flex align-items-center"
+          >
+            <img src={logo1} className="logo me-2" alt="Brand Logo" />
+            {props.title}
           </Navbar.Brand>
+
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
-              <Link to="/" className="nav-link">
+              <NavLink
+                to="/"
+                className={({ isActive }) =>
+                  isActive ? "nav-link active" : "nav-link"
+                }
+              >
                 Home
-              </Link>
-              <Link to="about" className="nav-link">
+              </NavLink>
+              <NavLink
+                to="/about"
+                className={({ isActive }) =>
+                  isActive ? "nav-link active" : "nav-link"
+                }
+              >
                 About
-              </Link>
-              <Link to="contact" className="nav-link">
+              </NavLink>
+              <NavLink
+                to="/contact"
+                className={({ isActive }) =>
+                  isActive ? "nav-link active" : "nav-link"
+                }
+              >
                 Contact
-              </Link>
-              <li className="nav-item">
-                <Link className="nav-link" to="">
-                  Users
-                </Link>
-              </li>
+              </NavLink>
+              <NavLink
+                to="/userlist"
+                className={({ isActive }) =>
+                  isActive ? "nav-link active" : "nav-link"
+                }
+              >
+                User List
+              </NavLink>
 
-              {/* Navigate to the Signup page when clicked */}
+              {/* Signup Button */}
               <button
-                className={`btn ${
-                  props.mode === "dark" ? "btn-dark" : "btn-secondary"
+                className={`btn btn-${
+                  props.mode === "dark" ? "dark" : "secondary"
                 } ms-2`}
                 onClick={() => navigate("/signup")}
               >
                 <i className="bi bi-person-plus"></i> Signup
               </button>
 
+              {/* Theme Toggle Button */}
               <button
-                className={`btn ${
-                  props.mode === "dark" ? "btn-light" : "btn-dark"
+                className={`btn btn-outline-${
+                  props.mode === "dark" ? "light" : "dark"
                 } ms-2`}
                 onClick={props.toggleMode}
               >
