@@ -10,7 +10,7 @@ const Users = ({ mode }) => {
     <div className={`bg-${mode} min-vh-100 py-2`}>
       <div className="container mt-4">
         <h3 className="text-center mb-4">User Details</h3>
-        <Card className="shadow-lg border-0 rounded-lg">
+        <Card className="shadow-lg border-0 rounded-lg bg-info">
           <Card.Body>
             <h5 className="fw-bold">User ID: {user_id}</h5>
             <p className="text-muted">User Name: {userName}</p>
