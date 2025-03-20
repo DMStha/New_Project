@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Signup = () => {
   return (
     <div className="d-flex justify-content-center align-items-center bg-dark pt-4">
-      <div className="card p-4 shadow-lg bg-black">
+      <div className="card p-4 shadow-lg bg-dark bg-gradient">
         <h2 className="text-center mb-5 text-light">Sign Up</h2>
         <form>
           <div className="mb-3">
