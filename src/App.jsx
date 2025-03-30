@@ -21,7 +21,7 @@ const App = (props) => {
   const [mode, setMode] = useState("dark");
 
   const toggleMode = () => {
-    setMode(mode === "dark" ? "secondary" : "dark");
+    setMode(mode === "bg-color1" ? "bg-color2" : "bg-color1");
   };
 
   return (
@@ -34,17 +34,17 @@ const App = (props) => {
           element={
             <>
               <Banner mode={mode} />
-              <div className={`container-fluid py-5 bg-${mode}`}>
+              <div className={`container-fluid py-5 ${mode}`}>
                 <Testimonials />
               </div>
             </>
           }
         />
         <Route path="/home" element={<Home mode={mode} />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
-        <Route path="/contact" element={<Contact />} />
+        <Route path="/about" element={<About mode={mode} />} />
+        <Route path="/login" element={<Login mode={mode} />} />
+        <Route path="/signup" element={<Signup mode={mode} />} />
+        <Route path="/contact" element={<Contact mode={mode} />} />
         <Route
           path="/:user_id/:userName"
           element={<Users mode={mode} />}
@@ -52,7 +52,7 @@ const App = (props) => {
         <Route path="/userlist" element={<Userlist mode={mode} />} />
       </Routes>
 
-      <Footer />
+      <Footer mode={mode} />
     </BrowserRouter>
   );
 };

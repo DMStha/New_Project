@@ -1,8 +1,8 @@
 import React from "react";
 
-const Contact = () => {
+const Contact = (props) => {
   return (
-    <div className="container-fluid   bg-dark text-white">
+    <div className={`container-fluid   bg-color1 ${props.mode}  text-white`}>
       <div className="container py-5 ">
         <h2 className="text-center mb-4">Contact Us</h2>
         <p className="text-center">

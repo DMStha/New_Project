@@ -1,8 +1,8 @@
 import React from "react";
 
-const Footer = () => {
+const Footer = (props) => {
   return (
-    <footer className="bg-dark text-white">
+    <footer className={`text-white bg-color1 ${props.mode}`}>
       <div className="container justify-content-between pt-3">
         <div className="row">
           {/* About Us Section */}

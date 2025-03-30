@@ -1,8 +1,8 @@
 import React from "react";
 
-const About = () => {
+const About = (props) => {
   return (
-    <div className="bg-dark text-light py-5">
+    <div className={`${props.mode} text-light py-5`}>
       <div className="container">
         <h2 className="text-center mb-4 text-warning">About Us</h2>
         <p className="lead text-center">

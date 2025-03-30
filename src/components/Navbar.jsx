@@ -13,28 +13,28 @@ const MyNavbar = (props) => {
     <>
       <div className="Navbar-img">
         <Navbar
-          bg={props.mode}
-          variant={props.mode === "dark" ? "dark" : "light"}
           expand="lg"
-          className="navbar-expand-lg"
+          className={`navbar-expand-lg ${props.mode} bg-color1 text-white `}
         >
-          <div className="container">
+          <div className="container text-white ">
             <Navbar.Brand
               as={NavLink}
               to="/"
-              className="d-flex align-items-center"
+              className="d-flex align-items-center text-white"
             >
-              <img src={logo1} className="logo me-2" alt="Brand Logo" />
+              <img src={logo1} className="logo me-2 " alt="Brand Logo" />
               {props.title}
             </Navbar.Brand>
 
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
-              <Nav className="ms-auto">
+              <Nav className="ms-auto text-white ">
                 <NavLink
                   to="/"
                   className={({ isActive }) =>
-                    isActive ? "nav-link active" : "nav-link"
+                    isActive
+                      ? "nav-link active text-white "
+                      : "nav-link text-white"
                   }
                 >
                   Home
@@ -42,7 +42,9 @@ const MyNavbar = (props) => {
                 <NavLink
                   to="/about"
                   className={({ isActive }) =>
-                    isActive ? "nav-link active" : "nav-link"
+                    isActive
+                      ? "nav-link active text-white"
+                      : "nav-link text-white"
                   }
                 >
                   About
@@ -50,7 +52,9 @@ const MyNavbar = (props) => {
                 <NavLink
                   to="/contact"
                   className={({ isActive }) =>
-                    isActive ? "nav-link active" : "nav-link"
+                    isActive
+                      ? "nav-link active text-white"
+                      : "nav-link text-white"
                   }
                 >
                   Contact
@@ -58,7 +62,9 @@ const MyNavbar = (props) => {
                 <NavLink
                   to="/userlist"
                   className={({ isActive }) =>
-                    isActive ? "nav-link active" : "nav-link"
+                    isActive
+                      ? "nav-link active text-white"
+                      : "nav-link text-white"
                   }
                 >
                   User List
@@ -66,9 +72,7 @@ const MyNavbar = (props) => {
 
                 {/* Signup Button */}
                 <button
-                  className={`btn btn-${
-                    props.mode === "dark" ? "dark" : "secondary"
-                  } ms-2`}
+                  className={`btn  ms-2 text-white`}
                   onClick={() => navigate("/signup")}
                 >
                   <i className="bi bi-person-plus"></i> Signup
@@ -77,7 +81,7 @@ const MyNavbar = (props) => {
                 {/* Theme Toggle Button */}
                 <button
                   className={`btn border-0 btn-outline-${
-                    props.mode === "dark" ? "light" : "dark"
+                    props.mode === "bg-color1" ? "light" : "dark"
                   } ms-2`}
                   onClick={props.toggleMode}
                 >
