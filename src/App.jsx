@@ -34,7 +34,7 @@ const App = (props) => {
           element={
             <>
               <Banner mode={mode} />
-              <div className={`container-fluid py-5 ${mode}`}>
+              <div className={`container-fluid py-5 bg-color1 ${mode}`}>
                 <Testimonials />
               </div>
             </>
