@@ -7,7 +7,7 @@ const MyNavbar = (props) => {
   const navigate = useNavigate();
 
   let iconClass = "bi";
-  iconClass += props.mode === "dark" ? " bi-sun" : " bi-moon";
+  iconClass += props.mode === "bg-color2" ? " bi-moon" : " bi-sun";
 
   return (
     <>
@@ -81,7 +81,7 @@ const MyNavbar = (props) => {
                 {/* Theme Toggle Button */}
                 <button
                   className={`btn border-0 btn-outline-${
-                    props.mode === "bg-color1" ? "light" : "dark"
+                    props.mode === "bg-color1" ? "light" : "bg-color1"
                   } ms-2`}
                   onClick={props.toggleMode}
                 >
