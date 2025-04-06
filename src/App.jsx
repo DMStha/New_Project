@@ -18,12 +18,11 @@ import Userlist from "./components/Userlist";
 
 const App = (props) => {
   const [title, setTitle] = useState("MindRisers");
-  const [mode, setMode] = useState("dark");
+  const [mode, setMode] = useState("bg-color1");
 
   const toggleMode = () => {
     setMode(mode === "bg-color1" ? "bg-color2" : "bg-color1");
   };
-
   return (
     <BrowserRouter>
       <MyNavbar title={title} mode={mode} toggleMode={toggleMode} />
