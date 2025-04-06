@@ -15,6 +15,7 @@ import "bootstrap/dist/js/bootstrap.bundle.min";
 import "./App.css";
 import Users from "./components/Userdetails";
 import Userlist from "./components/Userlist";
+import ProductState from "./context/productState";
 
 const App = (props) => {
   const [title, setTitle] = useState("MindRisers");
@@ -24,35 +25,37 @@ const App = (props) => {
     setMode(mode === "bg-color1" ? "bg-color2" : "bg-color1");
   };
   return (
-    <BrowserRouter>
-      <MyNavbar title={title} mode={mode} toggleMode={toggleMode} />
+    <ProductState>
+      <BrowserRouter>
+        <MyNavbar title={title} mode={mode} toggleMode={toggleMode} />
 
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <>
-              <Banner mode={mode} />
-              <div className={`container-fluid py-5 bg-color1 ${mode}`}>
-                <Testimonials />
-              </div>
-            </>
-          }
-        />
-        <Route path="/home" element={<Home mode={mode} />} />
-        <Route path="/about" element={<About mode={mode} />} />
-        <Route path="/login" element={<Login mode={mode} />} />
-        <Route path="/signup" element={<Signup mode={mode} />} />
-        <Route path="/contact" element={<Contact mode={mode} />} />
-        <Route
-          path="/:user_id/:userName"
-          element={<Users mode={mode} />}
-        />{" "}
-        <Route path="/userlist" element={<Userlist mode={mode} />} />
-      </Routes>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <Banner mode={mode} />
+                <div className={`container-fluid py-5 bg-color1 ${mode}`}>
+                  <Testimonials />
+                </div>
+              </>
+            }
+          />
+          <Route path="/home" element={<Home mode={mode} />} />
+          <Route path="/about" element={<About mode={mode} />} />
+          <Route path="/login" element={<Login mode={mode} />} />
+          <Route path="/signup" element={<Signup mode={mode} />} />
+          <Route path="/contact" element={<Contact mode={mode} />} />
+          <Route
+            path="/:user_id/:userName"
+            element={<Users mode={mode} />}
+          />{" "}
+          <Route path="/userlist" element={<Userlist mode={mode} />} />
+        </Routes>
 
-      <Footer mode={mode} />
-    </BrowserRouter>
+        <Footer mode={mode} />
+      </BrowserRouter>
+    </ProductState>
   );
 };
 

@@ -1,6 +1,10 @@
-import React from "react";
+import React, { useContext, useState } from "react";
+import ProductContext from "../context/productContext";
 
 const About = (props) => {
+  const context = useContext(ProductContext);
+  console.log(context);
+
   return (
     <div className={`${props.mode} text-light py-5`}>
       <div className="container">
