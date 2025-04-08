@@ -1,9 +1,16 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import ProductContext from "../context/productContext";
 
 const About = (props) => {
   const context = useContext(ProductContext);
-  console.log(context);
+  const { s, handleTextChange, text } = context;
+
+  console.log(s);
+  console.log(handleTextChange);
+
+  useEffect(() => {
+    handleTextChange();
+  });
 
   return (
     <div className={`${props.mode} text-light py-5`}>
@@ -13,6 +20,7 @@ const About = (props) => {
           Welcome to <strong>MindRisers</strong>, where we empower individuals
           with cutting-edge skills and technology.
         </p>
+        {/* <p>{text}</p>      */}
 
         <div className="row mt-4">
           {/* Mission Card */}
