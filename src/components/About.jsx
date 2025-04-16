@@ -3,14 +3,10 @@ import ProductContext from "../context/productContext";
 
 const About = (props) => {
   const context = useContext(ProductContext);
-  const { s, handleTextChange, text } = context;
+  const { s, handleTextChange, fetchData } = context;
 
   console.log(s);
   console.log(handleTextChange);
-
-  useEffect(() => {
-    handleTextChange();
-  });
 
   return (
     <div className={`${props.mode} text-light py-5`}>
