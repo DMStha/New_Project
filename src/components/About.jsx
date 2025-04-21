@@ -1,9 +1,9 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext } from "react";
 import ProductContext from "../context/productContext";
 
 const About = (props) => {
   const context = useContext(ProductContext);
-  const { s, handleTextChange, fetchData } = context;
+  const { s, handleTextChange } = context;
 
   console.log(s);
   console.log(handleTextChange);

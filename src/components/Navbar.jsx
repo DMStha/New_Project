@@ -69,6 +69,16 @@ const MyNavbar = (props) => {
                 >
                   User List
                 </NavLink>
+                <NavLink
+                  to=""
+                  className={({ isActive }) =>
+                    isActive
+                      ? "nav-link active text-white"
+                      : "nav-link text-white"
+                  }
+                >
+                  News
+                </NavLink>
 
                 {/* Signup Button */}
                 <button

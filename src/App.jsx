@@ -16,6 +16,7 @@ import "./App.css";
 import Users from "./components/Userdetails";
 import Userlist from "./components/Userlist";
 import ProductState from "./context/productState";
+import News from "./components/News";
 
 const App = (props) => {
   const [title, setTitle] = useState("MindRisers");
@@ -51,6 +52,7 @@ const App = (props) => {
             element={<Users mode={mode} />}
           />{" "}
           <Route path="/userlist" element={<Userlist mode={mode} />} />
+          <Route path="/news" element={<News mode={mode} />} />
         </Routes>
 
         <Footer mode={mode} />

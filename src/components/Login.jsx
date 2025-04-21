@@ -4,7 +4,10 @@ import { Link } from "react-router-dom";
 const Login = () => {
   return (
     <div className="d-flex justify-content-center align-items-center vh-100 bg-dark pt-4">
-      <div className="card p-4 bg-black shadow-lg text-white">
+      <div
+        className="card p-4 bg-black shadow-lg text-white"
+        style={{ width: "500px" }}
+      >
         <h2 className="text-center mb-4">Login</h2>
         <form>
           <div className="mb-3">

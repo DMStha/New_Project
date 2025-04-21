@@ -75,6 +75,13 @@ footer h5 {
   border: none;
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
+.custom-card .card-title {
+  font-size: 1rem;
+}
+
+.custom-card .card-text {
+  font-size: 0.9rem;
+}
 
 .custom-card:hover {
   transform: scale(1.05);
@@ -83,10 +90,4 @@ footer h5 {
 
 .custom-card .card-body {
   padding: 20px;
-}
-
-/* login signup */
-
-.card {
-  width: 550px;
 }
