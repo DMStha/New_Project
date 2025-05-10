@@ -70,7 +70,7 @@ const MyNavbar = (props) => {
                   User List
                 </NavLink>
                 <NavLink
-                  to=""
+                  to="News"
                   className={({ isActive }) =>
                     isActive
                       ? "nav-link active text-white"
