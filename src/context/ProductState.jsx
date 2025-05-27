@@ -63,6 +63,7 @@ const ProductState = (props) => {
     },
   ];
 
+  // eslint-disable-next-line no-undef
   const [state, dispatch] = useReducer(cartReducer, {
     products: product,
     cart: [],
